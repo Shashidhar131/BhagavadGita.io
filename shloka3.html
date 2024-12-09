@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glassmorphism Content</title>
+</head>
+<body>
+    
+    <div class="content">
+        <h4 id="Telugu">Shloka:<br>दु:खेष्वनुद्विग्नमना: सुखेषु विगतस्पृह: |<br>वीतरागभयक्रोध: स्थितधीर्मुनिरुच्यते ||<br><br>Summary:<br>duḥkheṣhv-anudvigna-manāḥ sukheṣhu vigata-spṛihaḥ<br>vīta-rāga-bhaya-krodhaḥ sthita-dhīr munir uchyate</h4>
+    </div>
+    
+    <div id="dropdown">
+        <select id="languageSelect">
+          <option value="select">Select Language</option>
+          <option value="telugu">Telugu</option>
+          <option value="hindi">Hindi</option>
+          <option value="tamil">Tamil</option>
+        </select>
+        <select id="voiceSelect">
+          <option value="select">Select Voice</option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+        </select>
+        <audio id="audioPlayer" controls hidden></audio>
+        <button id="playButton">Play Selected Audio</button>
+      </div>
+    
+    <div class="button-container">
+        <button  onclick="changeText7()" class="language-button">Telugu</button>
+        <button  onclick="changeText8()" class="language-button">Hindi</button>
+        <button  onclick="changeText9()" class="language-button">Tamil</button>
+        <a href="main.html"><button  onclick="changeText()"  class="language-button">Home</button></a>
+    </div>
+
+
+    <style>
+        body {
+            margin:0;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-between ;
+            background-image: url('AI.jpeg'); /* Replace with your image path */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position:center;
+        }
+
+        .content {
+            background: rgba(236, 230, 230, 0.596);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 10px;
+            align-items: center;
+            background-position: center;
+            margin-left: 370px;
+            box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.7);
+            animation: glassShine 3s infinite alternate ;
+        }
+        
+        @keyframes glassShine {
+            0% {
+                background: rgba(226, 218, 218, 0.575);
+                backdrop-filter: blur(10px);
+            }
+            50% {
+                background: rgba(233, 229, 229, 0.658);
+                backdrop-filter: blur(5px);
+            }
+            100% {
+                background: rgba(255, 255, 255, 0.438);
+                backdrop-filter: blur(10px);
+            }
+        }
+        .button-container {
+            position:fixed;
+            left: 20px;
+            top: 20px;
+          }
+          
+          .language-button {
+            background-color: rgba(0, 0, 0, 0.2);
+            border: none;
+            color: black;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            border-radius: 10px;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+          }
+          
+          .language-button:hover {
+            background-color: #ddd;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+          }
+         
+
+          
+    </style>
+
+    <script>
+        const Shloka = document.getElementById('Telugu');
+        
+        changeText7 = function(){
+            Shloka.innerHTML = "<h4>Shloka :దుఃఖేష్వనుద్విగ్నమనాః సుఖేషు విగతస్పృహః ।<br>వీతరాగభయక్రోధః స్థితధీర్మునిరుచ్యతే ।।<br><br>Summary:<br>దుఃఖముల నడుమ కలతచెందని వ్యక్తి,<br>సుఖముల కోసం ప్రాకులాడని వ్యక్తి, మమకారము, భయము, మరియు క్రోధము<br>విడిచిన వ్యక్తిని స్థిత-ప్రజ్ఞుడైన ముని అని అంటారు.</h4>";
+        }
+        changeText8 = function(){
+            Shloka.innerHTML = "<h4>Shloka:<br>दुःखेष्वनुद्विग्नमनाः सुखेषु विगतस्पृहः ।<br>वीतरागभयक्रोधः स्थितधीर्मुनिरुच्यते ॥<br><br>Summary:<br>जो मनुष्य किसी प्रकार के दुखों में क्षुब्ध नहीं होता जो सुख की लालसा नहीं करता और जो आसक्ति,<br> भय और क्रोध से मुक्त रहता है, वह स्थिर बुद्धि वाला मनीषी कहलाता है।</h4>";
+        }
+        changeText9 = function(){
+            Shloka.innerHTML = "<h4>Shloka:<br>து3:கே2ஷ்வனுத்3விக்3னமனா: ஸுகே2ஷு விக3த1ஸ்ப்1ருஹ: |<br>வீத1ராக3ப4யக்1ரோத4: ஸ்தி2த1தீ4ர்முனிருச்1யதே1 ||<br><br>Summary:<br>எவருடைய மனம் துன்பங்களுக்கு மத்தியில் கலக்கமில்லாமல் இருக்கிறதோ,<br>இன்பத்திற்காக ஏங்காமல், பற்று, பயம், மற்றும் கோபம் அற்று இருக்கிறதோ<br>அவர் நிலையான ஞானமுள்ள ஞானி என்று அழைக்கப்படுகிறார்.</h4>";
+        }
+        
+        const languageSelect = document.getElementById('languageSelect');
+        const voiceSelect = document.getElementById('voiceSelect');
+        const playButton = document.getElementById('playButton');
+        const audioPlayer = document.getElementById('audioPlayer');
+    
+        const audioSources = {
+          telugu: {
+            male: 'tamil1.mp3',
+            female:'telugu1.mp3'
+          },
+          hindi: {
+            male: 'hindi_male_audio.mp3',
+            female: 'hindi_female_audio.mp3'
+          },
+          tamil: {
+            male: 'tamil_male_audio.mp3',
+            female: 'tamil_female_audio.mp3'
+          }
+        };
+    
+        function playSelectedAudio() {
+          const selectedLanguage = languageSelect.value;
+          const selectedVoice = voiceSelect.value;
+          const audioSource = audioSources[selectedLanguage][selectedVoice];
+    
+          if (audioSource) {
+            if (audioPlayer.paused) {
+              audioPlayer.src = audioSource;
+              audioPlayer.play();
+              playButton.textContent = "Pause";
+            } else {
+              audioPlayer.pause();
+              playButton.textContent = "Play Selected Audio";
+            }
+          } else {
+            alert("Audio for the selected language and voice is not available.");
+          }
+        }
+    
+        playButton.addEventListener('click', playSelectedAudio);
+    
+        audioPlayer.addEventListener('ended', () => {
+          playButton.textContent = "Play Selected Audio";
+        });    
+    </script>
+</body>
+</html>

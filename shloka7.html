@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glassmorphism Content</title>
+</head>
+<body>
+    
+    <div class="content">
+        <h4 id="Telugu">Shloka:<br>यततो ह्यपि कौन्तेय पुरुषस्य विपश्चित: |<br>इन्द्रियाणि प्रमाथीनि हरन्ति प्रसभं मन: ||Summary:<br>yatato hyapi kaunteya puruṣhasya vipaśhchitaḥ<br>indriyāṇi pramāthīni haranti prasabhaṁ manaḥ</h4>
+    </div>
+    
+
+    <div id="dropdown">
+        <select id="languageSelect">
+          <option value="select">Select Language</option>
+          <option value="telugu">Telugu</option>
+          <option value="hindi">Hindi</option>
+          <option value="tamil">Tamil</option>
+        </select>
+        <select id="voiceSelect">
+          <option value="select">Select Voice</option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+        </select>
+        <audio id="audioPlayer" controls hidden></audio>
+        <button id="playButton">Play Selected Audio</button>
+      </div>
+    
+    <div class="button-container">
+        <button  onclick="changeText1()" class="language-button">Telugu</button>
+        <button  onclick="changeText2()" class="language-button">Hindi</button>
+        <button  onclick="changeText3()" class="language-button">Tamil</button>
+        <a href="main.html"><button  onclick="changeText4()"  class="language-button">Home</button></a>
+    </div>
+
+
+    <style>
+        body {
+            margin:0;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-between ;
+            background-image: url('AI.jpeg'); /* Replace with your image path */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position:center;
+        }
+
+        .content {
+            background: rgba(236, 230, 230, 0.596);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 10px;
+            align-items: center;
+            background-position: center;
+            margin-left: 370px;
+            box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.7);
+            animation: glassShine 3s infinite alternate ;
+        }
+        
+        @keyframes glassShine {
+            0% {
+                background: rgba(226, 218, 218, 0.575);
+                backdrop-filter: blur(10px);
+            }
+            50% {
+                background: rgba(233, 229, 229, 0.658);
+                backdrop-filter: blur(5px);
+            }
+            100% {
+                background: rgba(255, 255, 255, 0.438);
+                backdrop-filter: blur(10px);
+            }
+        }
+        .button-container {
+            position: fixed;
+            left: 20px;
+            top: 20px;
+          }
+          
+          .language-button {
+            background-color: rgba(0, 0, 0, 0.2);
+            border: none;
+            color: black;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            border-radius: 10px;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+          }
+          
+          .language-button:hover {
+            background-color: #ddd;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+          }
+         
+
+          
+    </style>
+
+    <script>
+        const Shloka = document.getElementById('Telugu');
+        
+        changeText1 = function(){
+            Shloka.innerHTML = "<h4>Shloka :<br>యతతో హ్యపి కౌంతేయ పురుషస్య విపశ్చితః ।<br>ఇంద్రియాణి ప్రమాథీని హరంతి ప్రసభం మనః ।।<br><br>Summary:<br>ఇంద్రియములు ఎంత ప్రబలమైనవి,అల్లకల్లోలమైనవి అంటే,<br> ఓ కుంతీ పుత్రుడా, వివేకము కలిగి, స్వీయ-నియంత్రణ పాటించే సాధకుని మనస్సుని కూడా బలవంతంగా లాక్కోనిపోగలవు.</h4>";
+        }
+        changeText2 = function(){
+            Shloka.innerHTML = "<h4>Shloka :<br>यततो ह्यपि कौन्तेय पुरूषस्य विपश्चितः।<br>इन्द्रियाणि प्रमाथीनि हरन्ति प्रसभं मनः ॥<br><br>Summary:<br>हे कुन्ति पुत्र! इन्द्रियाँ इतनी प्रबल और अशान्त होती है कि वे विवेकशील<br>और आत्म नियंत्रण का अभ्यास करने वाले मनुष्य के मन को भी अपने वश में कर लेती है।</h4>";
+        }
+        changeText3 = function(){
+            Shloka.innerHTML = "<h4>Shloka :<br>யத1தோ1 ஹ்யபி1 கௌ1ன்தே1ய பு1ருஷஸ்ய விப1ஶ்சி1த1: |<br>இந்த்3ரியாணி ப்1ரமாதீ2னி ஹரன்தி1 ப்1ரஸப4ம் மன: ||<br><br>Summary:<br>குந்தியின் மகனே, புலன்கள் மிகவும் வலுவாகவும், கொந்தளிப்பாகவும் உள்ளன,<br>அவை பாகுபாடு மற்றும் தன்னடக்கத்தைக் <br>கடைப்பிடிக்கும் ஒரு நபரின் மனதைக் கூட வலுக்கட்டாயமாக எடுத்துச் செல்ல முடியும்.</h4>";
+        }
+        
+        const languageSelect = document.getElementById('languageSelect');
+        const voiceSelect = document.getElementById('voiceSelect');
+        const playButton = document.getElementById('playButton');
+        const audioPlayer = document.getElementById('audioPlayer');
+    
+        const audioSources = {
+          telugu: {
+            male: 'tamil1.mp3',
+            female:'telugu1.mp3'
+          },
+          hindi: {
+            male: 'hindi_male_audio.mp3',
+            female: 'hindi_female_audio.mp3'
+          },
+          tamil: {
+            male: 'tamil_male_audio.mp3',
+            female: 'tamil_female_audio.mp3'
+          }
+        };
+    
+        function playSelectedAudio() {
+          const selectedLanguage = languageSelect.value;
+          const selectedVoice = voiceSelect.value;
+          const audioSource = audioSources[selectedLanguage][selectedVoice];
+    
+          if (audioSource) {
+            if (audioPlayer.paused) {
+              audioPlayer.src = audioSource;
+              audioPlayer.play();
+              playButton.textContent = "Pause";
+            } else {
+              audioPlayer.pause();
+              playButton.textContent = "Play Selected Audio";
+            }
+          } else {
+            alert("Audio for the selected language and voice is not available.");
+          }
+        }
+    
+        playButton.addEventListener('click', playSelectedAudio);
+    
+        audioPlayer.addEventListener('ended', () => {
+          playButton.textContent = "Play Selected Audio";
+        });  
+    </script>
+</body>
+</html>

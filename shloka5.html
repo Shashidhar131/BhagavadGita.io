@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glassmorphism Content</title>
+</head>
+<body>
+    
+    <div class="content">
+        <h4 id="Telugu">Shloka:<br>यदा संहरते चायं कूर्मोऽङ्गानीव सर्वश: |<br>इन्द्रियाणीन्द्रियार्थेभ्यस्तस्य प्रज्ञा प्रतिष्ठिता ||<br>Summary:<br>yadā sanharate chāyaṁ kūrmo ’ṅgānīva sarvaśhaḥ<br>indriyāṇīndriyārthebhyas tasya prajñā pratiṣhṭhitā</h4>
+    </div>
+    
+    <div id="dropdown">
+        <select id="languageSelect">
+          <option value="select">Select Language</option>
+          <option value="telugu">Telugu</option>
+          <option value="hindi">Hindi</option>
+          <option value="tamil">Tamil</option>
+        </select>
+        <select id="voiceSelect">
+          <option value="select">Select Voice</option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+        </select>
+        <audio id="audioPlayer" controls hidden></audio>
+        <button id="playButton">Play Selected Audio</button>
+      </div>
+    
+    <div class="button-container">
+        <button  onclick="changeText1()" class="language-button">Telugu</button>
+        <button  onclick="changeText2()" class="language-button">Hindi</button>
+        <button  onclick="changeText3()" class="language-button">Tamil</button>
+        <a href="main.html"><button  onclick="changeText4()"  class="language-button">Home</button></a>
+    </div>
+
+
+    <style>
+        body {
+            margin:0;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-between ;
+            background-image: url('AI.jpeg'); /* Replace with your image path */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position:center;
+        }
+
+        .content {
+            background: rgba(236, 230, 230, 0.596);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 10px;
+            align-items: center;
+            background-position: center;
+            margin-left: 370px;
+            box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.7);
+            animation: glassShine 3s infinite alternate ;
+        }
+        
+        @keyframes glassShine {
+            0% {
+                background: rgba(226, 218, 218, 0.575);
+                backdrop-filter: blur(10px);
+            }
+            50% {
+                background: rgba(233, 229, 229, 0.658);
+                backdrop-filter: blur(5px);
+            }
+            100% {
+                background: rgba(255, 255, 255, 0.438);
+                backdrop-filter: blur(10px);
+            }
+        }
+        .button-container {
+            position: fixed;
+            left: 20px;
+            top: 20px;
+          }
+          
+          .language-button {
+            background-color: rgba(0, 0, 0, 0.2);
+            border: none;
+            color: black;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            border-radius: 10px;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+          }
+          
+          .language-button:hover {
+            background-color: #ddd;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+          }
+         
+
+          
+    </style>
+
+    <script>
+        const Shloka = document.getElementById('Telugu');
+        
+        changeText1 = function(){
+            Shloka.innerHTML = "<h4>Shloka :<br>యదా సంహరతే చాయం కూర్మోఽఙ్గానీవ సర్వశః ।<br>ఇంద్రియాణీంద్రియార్థేభ్యః తస్య ప్రజ్ఞా ప్రతిష్ఠితా ।।<br><br>Summary:<br>తాబేలు దాని అంగములను తన పైచిప్ప లోనికి ఉపసంహరించుకున్నట్టుగా,<br>ఇంద్రియములను వాటి విషయార్థముల నుండి వెనుకకు మరల్చగలిగిన వాడు,<br>దివ్యమైన ఆధ్యాత్మిక జ్ఞానంలో స్థిరచిత్తుడగును.</h4>";
+        }
+        changeText2 = function(){
+            Shloka.innerHTML = "<h4>Shloka :<br>यदा संहरते चायं कूर्मोऽङ्गानीव सर्वशः।<br>इन्द्रियाणीन्द्रियार्थेभ्यस्तस्य प्रज्ञा प्रतिष्ठिता ॥<br><br>Summary:<br>जो मनुष्य अपनी इन्द्रियों को उनके विषय भोगों से खींच लेने के लिए उसी प्रकार से योग्य होता है,<br>जैसे एक कछुआ अपने अंगो को संकुचित करके उन्हें खोल के भीतर कर लेता है,<br>वह दिव्य ज्ञान में स्थिर हो जाता है।</h4>";
+        }
+        changeText3 = function(){
+            Shloka.innerHTML = "<h4>Shloka :<br>யதா3 ஸன்ஹரதே1 சா1யம் கூ1ர்மோ﻿‌ங்கா3னீவ ஸர்வஶ: |<br>இந்த்3ரியாணீன்த்3ரியார்தே2ப்4யஸ்த1ஸ்ய ப்1ரஞ்ஞா ப்1ரதி1ஷ்டி2தா1 ||<br><br>Summary:<br>புலன்களை அவற்றின் பொருள்களிலிருந்து விலக்கிக் கொள்ளக்கூடியவன்,<br>ஆமை தன் உறுப்புகளை ஓட்டுக்குள் பின் இழுத்துக் கொள்வது போல,<br>தெய்வீக ஞானத்தில் நிலைபெற்றுள்ளான்.</h4>";
+        }
+        
+        const languageSelect = document.getElementById('languageSelect');
+        const voiceSelect = document.getElementById('voiceSelect');
+        const playButton = document.getElementById('playButton');
+        const audioPlayer = document.getElementById('audioPlayer');
+    
+        const audioSources = {
+          telugu: {
+            male: 'tamil1.mp3',
+            female:'telugu1.mp3'
+          },
+          hindi: {
+            male: 'hindi_male_audio.mp3',
+            female: 'hindi_female_audio.mp3'
+          },
+          tamil: {
+            male: 'tamil_male_audio.mp3',
+            female: 'tamil_female_audio.mp3'
+          }
+        };
+    
+        function playSelectedAudio() {
+          const selectedLanguage = languageSelect.value;
+          const selectedVoice = voiceSelect.value;
+          const audioSource = audioSources[selectedLanguage][selectedVoice];
+    
+          if (audioSource) {
+            if (audioPlayer.paused) {
+              audioPlayer.src = audioSource;
+              audioPlayer.play();
+              playButton.textContent = "Pause";
+            } else {
+              audioPlayer.pause();
+              playButton.textContent = "Play Selected Audio";
+            }
+          } else {
+            alert("Audio for the selected language and voice is not available.");
+          }
+        }
+    
+        playButton.addEventListener('click', playSelectedAudio);
+    
+        audioPlayer.addEventListener('ended', () => {
+          playButton.textContent = "Play Selected Audio";
+        });
+    </script>
+</body>
+</html>

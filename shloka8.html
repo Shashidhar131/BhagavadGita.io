@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glassmorphism Content</title>
+</head>
+<body>
+    
+    <div class="content">
+        <h4 id="Telugu">Shloka:<br>तानि सर्वाणि संयम्य युक्त आसीत मत्पर: |<br>वशे हि यस्येन्द्रियाणि तस्य प्रज्ञा प्रतिष्ठिता ||<br>Summary:<br>tāni sarvāṇi sanyamya yukta āsīta mat-paraḥ<br>vaśhe hi yasyendriyāṇi tasya prajñā pratiṣhṭhitā</h4>
+    </div>
+    
+    <div id="dropdown">
+        <select id="languageSelect">
+          <option value="select">Select Language</option>
+          <option value="telugu">Telugu</option>
+          <option value="hindi">Hindi</option>
+          <option value="tamil">Tamil</option>
+        </select>
+        <select id="voiceSelect">
+          <option value="select">Select Voice</option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+        </select>
+        <audio id="audioPlayer" controls hidden></audio>
+        <button id="playButton">Play Selected Audio</button>
+      </div>
+    
+    <div class="button-container">
+        <button  onclick="changeText1()" class="language-button">Telugu</button>
+        <button  onclick="changeText2()" class="language-button">Hindi</button>
+        <button  onclick="changeText3()" class="language-button">Tamil</button>
+        <a href="main.html"><button  onclick="changeText4()"  class="language-button">Home</button></a>
+    </div>
+
+
+    <style>
+        body {
+            margin:0;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-between ;
+            background-image: url('AI.jpeg'); /* Replace with your image path */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position:center;
+        }
+
+        .content {
+            background: rgba(236, 230, 230, 0.596);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 10px;
+            align-items: center;
+            background-position: center;
+            margin-left: 370px;
+            box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.7);
+            animation: glassShine 3s infinite alternate ;
+        }
+        
+        @keyframes glassShine {
+            0% {
+                background: rgba(226, 218, 218, 0.575);
+                backdrop-filter: blur(10px);
+            }
+            50% {
+                background: rgba(233, 229, 229, 0.658);
+                backdrop-filter: blur(5px);
+            }
+            100% {
+                background: rgba(255, 255, 255, 0.438);
+                backdrop-filter: blur(10px);
+            }
+        }
+        .button-container {
+            position: fixed;
+            left: 20px;
+            top: 20px;
+          }
+          
+          .language-button {
+            background-color: rgba(0, 0, 0, 0.2);
+            border: none;
+            color: black;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            border-radius: 10px;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+          }
+          
+          .language-button:hover {
+            background-color: #ddd;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+          }
+         
+
+          
+    </style>
+
+    <script>
+        const Shloka = document.getElementById('Telugu');
+        
+        changeText1 = function(){
+            Shloka.innerHTML = "<h4>Shloka :<br>తాని సర్వాణి సంయమ్య యుక్త ఆసీత మత్పరః ।<br>వశే హి యస్యేంద్రియాణి తస్య ప్రజ్ఞా ప్రతిష్ఠితా ।।<br><br>Summary:<br>ఎవరైతే తమ ఇంద్రియములను వశమునందు ఉంచుకొని, మనస్సుని నాయందే ఎల్లప్పుడూ లగ్నం చేయుదురో,<br> వారు సంపూర్ణ జ్ఞానంలో స్థితులై ఉన్నట్టు.</h4>";
+        }
+        changeText2 = function(){
+            Shloka.innerHTML = "<h4>Shloka :<br>तानि सर्वाणि संयम्य युक्त आसीत मत्परः।<br>वशे हि यस्येन्द्रियाणि तस्य प्रज्ञा प्रतिष्ठिता ॥<br><br>Summary:<br> वे जो अपनी इन्द्रियों को वश में कर लेते हैं और अपने मन को मुझमें स्थिर कर देते हैं, वे दिव्य ज्ञान में स्थित होते हैं।</h4>";
+        }
+        changeText3 = function(){
+            Shloka.innerHTML = "<h4>Shloka :<br>தா1னி ஸர்வாணி ஸன்யம்ய யுக்1த ஆஸீத1 மத்1ப1ர: |<br>வஶே ஹி யஸ்யேன்த்3ரியாணி த1ஸ்ய ப்1ரஞ்ஞா ப்1ரதி1ஷ்டி2தா1 ||<br><br>Summary:<br>அவர்கள் பரிபூரண அறிவில் நிலைநிறுத்தப்பட்டவர்கள்,<br>அவர்கள் தங்கள் புலன்களை அடக்கி,<br>தங்கள் மனதை எப்போதும் என்னில் லயித்து வைத்திருக்கிறார்கள்.</h4>";
+        }
+        
+        const languageSelect = document.getElementById('languageSelect');
+        const voiceSelect = document.getElementById('voiceSelect');
+        const playButton = document.getElementById('playButton');
+        const audioPlayer = document.getElementById('audioPlayer');
+    
+        const audioSources = {
+          telugu: {
+            male: 'tamil1.mp3',
+            female:'telugu1.mp3'
+          },
+          hindi: {
+            male: 'hindi_male_audio.mp3',
+            female: 'hindi_female_audio.mp3'
+          },
+          tamil: {
+            male: 'tamil_male_audio.mp3',
+            female: 'tamil_female_audio.mp3'
+          }
+        };
+    
+        function playSelectedAudio() {
+          const selectedLanguage = languageSelect.value;
+          const selectedVoice = voiceSelect.value;
+          const audioSource = audioSources[selectedLanguage][selectedVoice];
+    
+          if (audioSource) {
+            if (audioPlayer.paused) {
+              audioPlayer.src = audioSource;
+              audioPlayer.play();
+              playButton.textContent = "Pause";
+            } else {
+              audioPlayer.pause();
+              playButton.textContent = "Play Selected Audio";
+            }
+          } else {
+            alert("Audio for the selected language and voice is not available.");
+          }
+        }
+    
+        playButton.addEventListener('click', playSelectedAudio);
+    
+        audioPlayer.addEventListener('ended', () => {
+          playButton.textContent = "Play Selected Audio";
+        });    
+    </script>
+</body>
+</html>

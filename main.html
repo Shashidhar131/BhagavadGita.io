@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bhagavad Gita</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js"></script>
+</head>
+
+<style>
+    body {
+        margin: 0;
+        overflow: hidden;
+        background-image: url('Krishna.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+      }
+      
+      .background-image {
+        background-position: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        height: 1000vh;
+        width: 100%;
+        height: 100%;
+        background-image: unset;
+      }
+      
+      .title {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+        font-size: 50px;
+        opacity: 0;
+        transition: opacity 0.5s ease-in-out;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add shadow */
+      }
+
+      .background-image:hover .title {
+        opacity: 1;}
+    /* ... your existing CSS styles ... */
+
+.shloka-container {
+    position: fixed;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 150px;
+  }
+  
+  .shloka-button {
+    display: round;
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color:  rgba(0, 0, 0, 0.3);
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out; 1
+    
+    
+      
+    
+  }
+  
+  .shloka-button:hover {
+    background-color: #00ffea;
+    transform: scale(1.05); /* Slightly increase the size on hover */
+    box-shadow: 0px 2px 5px rgb(255, 255, 255); /* Add a subtle shadow */
+
+    background-color: #00ffd5; /* Change background color on hover */
+    box-shadow: 0px 2px 4px rgb(255, 255, 255); /* Add a shadow on hover */
+    transform: scale(1.05); /* Slightly enlarge the button on hover */
+    
+  }
+  
+  
+  .content-container {
+    margin-left: 200px;
+    padding: 20px;
+    flex-grow: 1;
+  }
+  
+  .shloka-info {
+    /* Styles for shloka content, e.g., font size, color, background color */
+  }
+  
+  /* Animation for the content container */
+  .content-container {
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+  }
+  
+  .content-container.show {
+    opacity: 1;
+    transform: scale(1);
+  }
+  .info-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+    color: white;
+    padding:  20px; 
+    border-radius: 10px;
+  }
+  .animated-button {
+    padding: 15px 30px;
+    background-color: rgba(0, 0, 0, 0.2);
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+  }
+  
+  .animated-button:hover {
+    background-color: rgba(0, 0, 0, 0);
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0);
+    transform: translateY(-2px);
+  }
+
+  .image {
+    position: relative;
+    display: round;
+    margin-right: 100px;
+    width: 10px;
+    height: 5px;
+    padding: 10px;
+  }
+  .img {
+    display: round;
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color:  rgba(0, 0, 0, 0.3);
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out; 1
+  }
+
+  .img:hover {
+    background-color: #00ffea;
+    transform: scale(1.05); /* Slightly increase the size on hover */
+    box-shadow: 0px 2px 5px rgb(255, 255, 255); /* Add a subtle shadow */
+
+    background-color: #00ffd5; /* Change background color on hover */
+    box-shadow: 0px 2px 4px rgb(255, 255, 255); /* Add a shadow on hover */
+    transform: scale(1.05); /* Slightly enlarge the button on hover */
+   
+  }
+
+  .video {
+    position: relative;
+    margin-left: 250px;
+    margin-bottom: 60px;
+  }
+
+  .vid {
+    display: round;
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color:  rgba(0, 0, 0, 0.3);
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out; 1
+  }
+
+  .vid:hover {
+    background-color: #00ffea;
+    transform: scale(1.05); /* Slightly increase the size on hover */
+    box-shadow: 0px 2px 5px rgb(255, 255, 255); /* Add a subtle shadow */
+
+    background-color: #00ffd5; /* Change background color on hover */
+    box-shadow: 0px 2px 4px rgb(255, 255, 255); /* Add a shadow on hover */
+    transform: scale(1.05); /* Slightly enlarge the button on hover */
+  }
+  
+  
+</style>
+
+<script>
+</script>
+
+<body>
+  <header>
+    <h1>Bhagavad Gita</h1>
+  </header>
+
+  <div class="main-content">
+    <div class="shloka-container">
+      <a href="shloka1.html"><button class="shloka-button">Shloka-1</button></a>
+      <a href="shloka2.html"><button class="shloka-button">Shloka-2</button></a>
+      <a href="shloka3.html"><button class="shloka-button">Shloka-3</button></a>
+      <a href="shloka4.html"><button class="shloka-button">Shloka-4</button></a>
+      <a href="shloka5.html"><button class="shloka-button">Shloka-5</button></a>
+      <a href="shloka6.html"><button class="shloka-button">Shloka-6</button></a>
+      <a href="shloka7.html"><button class="shloka-button">Shloka-7</button></a>
+      <a href="shloka8.html"><button class="shloka-button">Shloka-8</button></a>
+      <a href="shloka9.html"><button class="shloka-button">Shloka-9</button></a>
+      <a href="shloka10.html"><button class="shloka-button">Shloka-10</button></a>
+      </div>
+    <div class="image">
+      <a href="Card.html"><button class="img">Images</button></a>
+    </div>
+    <div class="video">
+      <a href="video.html"><button class="vid">Video</button></a>
+    </div>
+      <div class="background-image">
+        <h1 class="title">Bhagavad Gita</h1>
+        <div class="info-container">
+          <p><h2>Bhagavadgita is an episode recorded in the Mahabharata,
+            a Sanskrit epic poem of ancient India.
+            It is an influential religious text in Hinduism that takes the form of a dialogue between Prince Arjuna and Krishna,
+            an avatar of the Hindu deity Vishnu.
+            It was likely composed in the 1st or 2nd century CE.</<h2></p>
+          <p>More information...</p>
+        </div>
+      </div>
+
+    <div class="content-container">
+      <div class="shloka-info">
+        </div>
+    </div>
+  </div>
+</body>
+</html>

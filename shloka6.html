@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glassmorphism Content</title>
+</head>
+<body>
+    
+    <div class="content">
+        <h4 id="Telugu">Shloka:<br>विषया विनिवर्तन्ते निराहारस्य देहिन: |<br>रसवर्जं रसोऽप्यस्य परं दृष्ट्वा निवर्तते ||<br>Summary:<br>viṣhayā vinivartante nirāhārasya dehinaḥ<br>rasa-varjaṁ raso ’pyasya paraṁ dṛiṣhṭvā nivartate</h4>
+            
+            
+    </div>
+    
+    <div id="dropdown">
+        <select id="languageSelect">
+          <option value="select">Select Language</option>
+          <option value="telugu">Telugu</option>
+          <option value="hindi">Hindi</option>
+          <option value="tamil">Tamil</option>
+        </select>
+        <select id="voiceSelect">
+          <option value="select">Select Voice</option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+        </select>
+        <audio id="audioPlayer" controls hidden></audio>
+        <button id="playButton">Play Selected Audio</button>
+      </div>
+    
+    <div class="button-container">
+        <button  onclick="changeText1()" class="language-button">Telugu</button>
+        <button  onclick="changeText2()" class="language-button">Hindi</button>
+        <button  onclick="changeText3()" class="language-button">Tamil</button>
+        <a href="main.html"><button  onclick="changeText4()"  class="language-button">Home</button></a>
+    </div>
+
+
+    <style>
+        body {
+            margin:0;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-between ;
+            background-image: url('AI.jpeg'); /* Replace with your image path */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position:center;
+        }
+
+        .content {
+            background: rgba(236, 230, 230, 0.596);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 10px;
+            align-items: center;
+            background-position: center;
+            margin-left: 370px;
+            box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.7);
+            animation: glassShine 3s infinite alternate ;
+        }
+        
+        @keyframes glassShine {
+            0% {
+                background: rgba(226, 218, 218, 0.575);
+                backdrop-filter: blur(10px);
+            }
+            50% {
+                background: rgba(233, 229, 229, 0.658);
+                backdrop-filter: blur(5px);
+            }
+            100% {
+                background: rgba(255, 255, 255, 0.438);
+                backdrop-filter: blur(10px);
+            }
+        }
+        .button-container {
+            position: fixed;
+            left: 20px;
+            top: 20px;
+          }
+          
+          .language-button {
+            background-color: rgba(0, 0, 0, 0.2);
+            border: none;
+            color: black;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            border-radius: 10px;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+          }
+          
+          .language-button:hover {
+            background-color: #ddd;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+          }
+         
+
+          
+    </style>
+
+    <script>
+        const Shloka = document.getElementById('Telugu');
+        
+        changeText1 = function(){
+            Shloka.innerHTML = "<h4>Shloka :<br>విషయా వినివర్తంతే నిరాహారస్య దేహినః ।<br>రసవర్జం రసోఽప్యస్య పరం దృష్ట్వా నివర్తతే ।।<br><br>Summary:సాధకులు తమ ఇంద్రియములను వాటి భోగ వస్తు/విషయముల నుండి నియంత్రించినా కానీ,<br>ఇంద్రియ విషయముల మీద రుచి ఉండిపోతుంది.<br>కానీ, భగవత్ ప్రాప్తి నొందిన వారికి ఆ రుచి కూడా అంతమగును.<br></h4>";
+        }
+        changeText2 = function(){
+            Shloka.innerHTML = "<h4>Shloka :<br>विषया विनिवर्तन्ते निराहारस्य देहिनः।<br>रसवर्जं रसोऽप्यस्य परं दृष्ट्वा निवर्तते ॥<br><br>Summary:<br>यद्यपि देहधारी जीव इन्द्रियों के विषयों से अपने को कितना दूर रखे<br>लेकिन इन्द्रिय विषयों को भोगने की लालसा बनी रहती है फिर भी जो लोग भगवान को जान लेते हैं,<br>उनकी लालसाएँ समाप्त हो जाती हैं।</h4>";
+            
+        }
+        changeText3 = function(){
+            Shloka.innerHTML = "<h4>Shloka :<br>விஷயா வினிவர்த1ன்தே1 நிராஹாரஸ்ய தே3ஹின: |<br>ரஸவர்ஜம் ரஸோ﻿‌ப்1யஸ்ய ப1ரம் த்3ருஷ்ட்1வா நிவர்த1தே1 ||<br><br>Summary:<br>ஆர்வமுள்ளவர்கள் தங்கள் இன்பப் பொருட்களிலிருந்து புலன்களைக் கட்டுப் படுத்தினாலும்,<br> புலன் பொருள்களுக்கான சுவை எஞ்சியுள்ளது.<br> இருப்பினும், பரமத்தை உணர்ந்தவர்களுக்கு இந்த சுவை கூட நின்றுவிடுகிறது.</h4>";
+        }
+        
+        const languageSelect = document.getElementById('languageSelect');
+        const voiceSelect = document.getElementById('voiceSelect');
+        const playButton = document.getElementById('playButton');
+        const audioPlayer = document.getElementById('audioPlayer');
+    
+        const audioSources = {
+          telugu: {
+            male: 'tamil1.mp3',
+            female:'telugu1.mp3'
+          },
+          hindi: {
+            male: 'hindi_male_audio.mp3',
+            female: 'hindi_female_audio.mp3'
+          },
+          tamil: {
+            male: 'tamil_male_audio.mp3',
+            female: 'tamil_female_audio.mp3'
+          }
+        };
+    
+        function playSelectedAudio() {
+          const selectedLanguage = languageSelect.value;
+          const selectedVoice = voiceSelect.value;
+          const audioSource = audioSources[selectedLanguage][selectedVoice];
+    
+          if (audioSource) {
+            if (audioPlayer.paused) {
+              audioPlayer.src = audioSource;
+              audioPlayer.play();
+              playButton.textContent = "Pause";
+            } else {
+              audioPlayer.pause();
+              playButton.textContent = "Play Selected Audio";
+            }
+          } else {
+            alert("Audio for the selected language and voice is not available.");
+          }
+        }
+    
+        playButton.addEventListener('click', playSelectedAudio);
+    
+        audioPlayer.addEventListener('ended', () => {
+          playButton.textContent = "Play Selected Audio";
+        });    
+    </script>
+</body>
+</html>

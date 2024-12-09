@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glassmorphism Content</title>
+</head>
+<body>
+    
+    <div class="content">
+        <h3 id="Telugu">Shloka:<br>भोगैश्वर्यप्रसक्तानां तयापहृतचेतसाम् |<br>व्यवसायात्मिका बुद्धि: समाधौ न विधीयते ||<br>Summary:<br>bhogaiśwvarya-prasaktānāṁ tayāpahṛita-chetasām<br>vyavasāyātmikā buddhiḥ samādhau na vidhīyate</h3>
+    </div>
+
+    <div id="dropdown">
+        <select id="languageSelect">
+          <option value="select">Select Language</option>
+          <option value="telugu">Telugu</option>
+          <option value="hindi">Hindi</option>
+          <option value="tamil">Tamil</option>
+        </select>
+        <select id="voiceSelect">
+          <option value="select">Select Voice</option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+        </select>
+        <audio id="audioPlayer" controls hidden></audio>
+        <button id="playButton">Play Selected Audio</button>
+      </div>
+   
+        
+        
+    
+    
+    <div class="button-container">
+        <button  onclick="changeText1()" class="language-button">Telugu</button>
+        <button  onclick="changeText2()" class="language-button">Hindi</button>
+        <button  onclick="changeText3()" class="language-button">Tamil</button>
+        <a href="main.html"><button  onclick="changeText()"  class="language-button">Home</button></a>
+    </div>
+
+
+    <style>
+        body {
+            margin:0;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-between ;
+            background-image: url('AI.jpeg'); /* Replace with your image path */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position:center;
+        }
+
+        .content {
+            background: rgba(236, 230, 230, 0.596);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 10px;
+            align-items: center;
+            background-position: center;
+            margin-left: 400px;
+            box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.7);
+            animation: glassShine 3s infinite alternate ;
+        }
+        
+        @keyframes glassShine {
+            0% {
+                background: rgba(214, 209, 209, 0.575);
+                backdrop-filter: blur(10px);
+            }
+            50% {
+                background: rgba(233, 229, 229, 0.788);
+                backdrop-filter: blur(5px);
+            }
+            100% {
+                background: rgba(255, 255, 255, 0.822);
+                backdrop-filter: blur(10px);
+            }
+        }
+        .button-container {
+            position: fixed;
+            left: 20px;
+            top: 20px;
+          }
+          
+          .language-button {
+            background-color: rgba(0, 0, 0, 0.2);
+            border: none;
+            color: black;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            border-radius: 10px;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+          }
+          
+          .language-button:hover {
+            background-color: #ddd;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+          }
+
+         
+
+          .dropdown {
+            position: relative;
+            display: inline-block;
+          }
+          
+          .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            padding: 12px 16px;
+            z-index: 1;
+          }
+          
+          .dropdown:hover .dropdown-content {
+            display: block;  
+            animation: slideDown 0.3s ease-in-out;
+          }
+          
+          @keyframes slideDown {
+            from {
+              opacity: 0;
+              transform: translateY(-10px);
+            }
+            to {
+              opacity: 1;
+              transform: translateY(0);
+            }
+          }
+          
+    </style>
+
+    <script>
+        const Shloka = document.getElementById('Telugu');
+        
+        changeText1 = function(){
+            Shloka.innerHTML = "<h4>Shloka :<br>భోగైశ్వర్యప్రసక్తానాం తయాపహృతచేతసామ్ ।<br>వ్యవసాయాత్మికా బుద్ధిః సమాధౌ న విధీయతే ।।<br><br>Summary:<br>ప్రాపంచిక భోగాలు, సుఖాల పట్ల మనస్సు మిక్కిలి మమకారాసక్తితో<br>ఉండిమరియు వారి బుద్ధులు ఇటువంటి వాటిచే చిత్తభ్రాంతికి లోనయ్యి,<br>వారు,భగవత్-ప్రాప్తి పథంలో సాఫల్యానికి కావలసిన దృఢ సంకల్పాన్ని కలిగి ఉండలేరు.</h4>";
+        }
+        changeText2 = function(){
+            Shloka.innerHTML = "<h4>Shloka:<br>भोगैश्वर्यप्रसक्तानां तयापहृतचेतसाम् |<br>व्यवसायात्मिका बुद्धि: समाधौ न विधीयते ||<br><br>Summary: <br>सांसारिक सुखों में मन की गहन आसक्ति के साथ उनकी बुद्धि ऐसी वस्तुओं में मोहित रहती है<br>इसलिए वे भगवद्प्राप्ति के मार्ग पर अग्रसर होने के हेतु दृढ़-संकल्प लेने में असमर्थ होते हैं।</h4>";
+ 
+        }
+        changeText3 = function(){
+            Shloka.innerHTML = "<h4>Shloka:<br>போ4கை3ஶ்வர்யப்1ரஸக்1தா1னாம் த1யாப1ஹ்ருத1சே1த1ஸாம் |<br>வ்யவஸாயாத்1மிகா1 பு3த்3தி4: ஸமாதௌ4 ந விதீ4யதே1 ||<br><br>Summary:<br>உலக இன்பங்களில் ஆழமாகப் பற்றுக்கொண்ட அவர்களின் மனதாலும்,<br>இத்தகைய விஷயங்களால் குழம்பிப்போயிருக்கும் அவர்களுடைய புத்திகளாலும்,<br>கடவுளை நோக்கிய பாதையில் வெற்றி பெறுவதற்கான உறுதியான தீர்மானத்தை அவர்களால் கொண்டிருக்க முடியாது.</h4>";
+        }
+        
+        const languageSelect = document.getElementById('languageSelect');
+        const voiceSelect = document.getElementById('voiceSelect');
+        const playButton = document.getElementById('playButton');
+        const audioPlayer = document.getElementById('audioPlayer');
+    
+        const audioSources = {
+          telugu: {
+            male: 'tamil1.mp3',
+            female:'telugu1.mp3'
+          },
+          hindi: {
+            male: 'hindi_male_audio.mp3',
+            female: 'hindi_female_audio.mp3'
+          },
+          tamil: {
+            male: 'tamil_male_audio.mp3',
+            female: 'tamil_female_audio.mp3'
+          }
+        };
+    
+        function playSelectedAudio() {
+          const selectedLanguage = languageSelect.value;
+          const selectedVoice = voiceSelect.value;
+          const audioSource = audioSources[selectedLanguage][selectedVoice];
+    
+          if (audioSource) {
+            if (audioPlayer.paused) {
+              audioPlayer.src = audioSource;
+              audioPlayer.play();
+              playButton.textContent = "Pause";
+            } else {
+              audioPlayer.pause();
+              playButton.textContent = "Play Selected Audio";
+            }
+          } else {
+            alert("Audio for the selected language and voice is not available.");
+          }
+        }
+    
+        playButton.addEventListener('click', playSelectedAudio);
+    
+        audioPlayer.addEventListener('ended', () => {
+          playButton.textContent = "Play Selected Audio";
+        });
+    </script>
+</body>
+</html>

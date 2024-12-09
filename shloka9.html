@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glassmorphism Content</title>
+</head>
+<body>
+    
+    <div class="content">
+        <h4 id="Telugu">Shloka:<br>ध्यायतो विषयान्पुंस: सङ्गस्तेषूपजायते |<br>सङ्गात्सञ्जायते काम: कामात्क्रोधोऽभिजायते ||<br>Summary:<br>dhyāyato viṣhayān puṁsaḥ saṅgas teṣhūpajāyate<br>saṅgāt sañjāyate kāmaḥ kāmāt krodho ’bhijāyate</h4>
+    </div>
+    
+    <div id="dropdown">
+        <select id="languageSelect">
+          <option value="select">Select Language</option>
+          <option value="telugu">Telugu</option>
+          <option value="hindi">Hindi</option>
+          <option value="tamil">Tamil</option>
+        </select>
+        <select id="voiceSelect">
+          <option value="select">Select Voice</option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+        </select>
+        <audio id="audioPlayer" controls hidden></audio>
+        <button id="playButton">Play Selected Audio</button>
+      </div>
+    
+    <div class="button-container">
+        <button  onclick="changeText1()" class="language-button">Telugu</button>
+        <button  onclick="changeText2()" class="language-button">Hindi</button>
+        <button  onclick="changeText3()" class="language-button">Tamil</button>
+        <a href="main.html"><button  onclick="changeText4()"  class="language-button">Home</button></a>
+    </div>
+
+
+    <style>
+        body {
+            margin:0;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-between ;
+            background-image: url('AI.jpeg'); /* Replace with your image path */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position:center;
+        }
+
+        .content {
+            background: rgba(236, 230, 230, 0.596);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 10px;
+            align-items: center;
+            background-position: center;
+            margin-left: 370px;
+            box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.7);
+            animation: glassShine 3s infinite alternate ;
+        }
+        
+        @keyframes glassShine {
+            0% {
+                background: rgba(226, 218, 218, 0.575);
+                backdrop-filter: blur(10px);
+            }
+            50% {
+                background: rgba(233, 229, 229, 0.658);
+                backdrop-filter: blur(5px);
+            }
+            100% {
+                background: rgba(255, 255, 255, 0.438);
+                backdrop-filter: blur(10px);
+            }
+        }
+        .button-container {
+            position: fixed;
+            left: 20px;
+            top: 20px;
+          }
+          
+          .language-button {
+            background-color: rgba(0, 0, 0, 0.2);
+            border: none;
+            color: black;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            border-radius: 10px;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+          }
+          
+          .language-button:hover {
+            background-color: #ddd;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+          }
+         
+
+          
+    </style>
+
+    <script>
+        const Shloka = document.getElementById('Telugu');
+        
+        changeText1 = function(){
+            Shloka.innerHTML = "<h4>Shloka :<br>ధ్యాయతో విషయాన్ పుంసః సంగస్తేషూపజాయతే ।<br>సంగాత్ సంజాయతే కామః కామాత్ క్రోధోఽభిజాయతే ।।<br><br>Summary:<br> ఇంద్రియ విషయముల మీద చింతన చేయటం వలన వాటి మీద మమకారాసక్తి పెరుగుతుంది.<br>ఈ ఆసక్తి కోరికలను కలుగ చేస్తుంది, మరియు కోరికల నుండి క్రోధం ఉత్పన్నమవుతుంది.</h4>";
+        }
+        changeText2 = function(){
+            Shloka.innerHTML = "<h4>Shloka :<br>ध्यायतो विषयान्पुंसः सङ्गस्तेषूपजायते ।<br>सङ्गत्सञ्जायते कामः कामात्क्रोधोऽभिजायते ॥<br><br>Summary:<br>इन्द्रियों के विषयों का चिंतन करते हुए मनुष्य उनमें आसक्त हो जाता है<br>और आसक्ति कामना की ओर ले जाती है और कामना से क्रोध उत्पन्न होता है।</h4>";
+        }
+        changeText3 = function(){
+            Shloka.innerHTML = "<h4>Shloka :<br>த்4யாயதோ1 விஷயான்பு1ம்ஸ: ஸங்க3ஸ்தே1ஷூப1ஜாயதே1 |<br>ஸங்கா3த்1ஸந்ஜாயதே கா1ம: கா1மாத்1க்1ரோதோ﻿‌4பி4ஜாயதே1 ||<br><br>Summary:<br>புலன்களின் பொருள்களைப் பற்றி சிந்திக்கும்போது, ​​​​அவற்றின் மீது பற்று வளர்கிறது.<br>பற்றுதல் ஆசைக்கு வழிவகுக்கிறது, ஆசையிலிருந்து கோபம் எழுகிறது.</h4>";
+        }
+        
+        const languageSelect = document.getElementById('languageSelect');
+        const voiceSelect = document.getElementById('voiceSelect');
+        const playButton = document.getElementById('playButton');
+        const audioPlayer = document.getElementById('audioPlayer');
+    
+        const audioSources = {
+          telugu: {
+            male: 'tamil1.mp3',
+            female:'telugu1.mp3'
+          },
+          hindi: {
+            male: 'hindi_male_audio.mp3',
+            female: 'hindi_female_audio.mp3'
+          },
+          tamil: {
+            male: 'tamil_male_audio.mp3',
+            female: 'tamil_female_audio.mp3'
+          }
+        };
+    
+        function playSelectedAudio() {
+          const selectedLanguage = languageSelect.value;
+          const selectedVoice = voiceSelect.value;
+          const audioSource = audioSources[selectedLanguage][selectedVoice];
+    
+          if (audioSource) {
+            if (audioPlayer.paused) {
+              audioPlayer.src = audioSource;
+              audioPlayer.play();
+              playButton.textContent = "Pause";
+            } else {
+              audioPlayer.pause();
+              playButton.textContent = "Play Selected Audio";
+            }
+          } else {
+            alert("Audio for the selected language and voice is not available.");
+          }
+        }
+    
+        playButton.addEventListener('click', playSelectedAudio);
+    
+        audioPlayer.addEventListener('ended', () => {
+          playButton.textContent = "Play Selected Audio";
+        });    
+    </script>
+</body>
+</html>
